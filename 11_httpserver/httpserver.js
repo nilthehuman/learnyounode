@@ -3,7 +3,7 @@ const fs   = require('fs');
 
 const port = Number( process.argv[2] );
 const file = process.argv[3];
-if ( isNaN(port) || undefined == file ) {
+if ( isNaN(port) || undefined === file ) {
     // bail immediately
     return;
 }

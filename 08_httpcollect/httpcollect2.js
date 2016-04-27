@@ -2,7 +2,7 @@ const bl     = require('bl');
 const http   = require('http');
 
 const page   = process.argv[2];
-if ( undefined == page ) {
+if ( undefined === page ) {
     // bail immediately
     return;
 }
