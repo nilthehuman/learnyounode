@@ -1,3 +1,5 @@
+/* eslint no-sync: "off" */
+
 function main()
 {
     const fs = require( "fs" );
