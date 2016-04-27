@@ -27,7 +27,7 @@ http.createServer( function( request, response ) {
         return;
     }
 
-    var jsonTime = Object();
+    var jsonTime = {};
     if ( '/api/parsetime' == urlParsed.pathname ) {
         jsonTime.hour   = date.getHours();
         jsonTime.minute = date.getMinutes();
