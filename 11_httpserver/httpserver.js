@@ -13,8 +13,8 @@ http.createServer( function( _, response ) {
     rs.on('open', function() {
         rs.pipe( response );
     });
-    rs.on('error', function(err) {
-        console.error('Could not find ' + file + ', sorry');
+    rs.on('error', function() {
+        console.error('Could not read ' + file + ', sorry');
         return;
     });
 }).listen( port );
