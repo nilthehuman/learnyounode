@@ -22,12 +22,12 @@ function printIfDone() {
         }
     }
     // Dump received content
-    for (var i = 0; i < pages.length; ++i) {
+    for (i = 0; i < pages.length; ++i) {
         console.log( pages[i].bl.toString() );
     }
 }
 
-for (var i = 0; i < pages.length; ++i) {
+for (i = 0; i < pages.length; ++i) {
     http.get( pages[i].url, function(i) { return function(response) {
         response.setEncoding('utf8');
         response.on('data', function(d) { pages[i].bl.append(d); } );  // Why can't this be eta-reduced?
