@@ -2,7 +2,8 @@ const bl     = require('bl');
 const http   = require('http');
 
 const PageBuffer = function(url) {
-    return { 'url'  : url
+    return {
+             'url'  : url
            , 'bl'   : bl()
            , 'ended': false
            };
