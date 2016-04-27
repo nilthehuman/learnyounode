@@ -27,12 +27,16 @@ function printIfDone() {
     }
 }
 
-for (i = 0; i < pages.length; ++i) {
-    http.get( pages[i].url, function(i) { return function(response) {
+function callback(i) {
+    return function(response) {
         response.setEncoding('utf8');
         response.on('data', function(d) { pages[i].bl.append(d); } );  // Why can't this be eta-reduced?
         response.on('end' , function( ) { pages[i].ended = true; printIfDone(); } );
         response.on('error', console.error);
-    } }(i) );  // JavaScript's scoping is broken
+    };
+}
+
+for (i = 0; i < pages.length; ++i) {
+    http.get( pages[i].url, callback(i) );  // JavaScript's scoping is broken
 }
 
