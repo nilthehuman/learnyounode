@@ -15,13 +15,8 @@ http.createServer( function( request, response ) {
 
     const urlParsed = url.parse( request.url, true );
     const iso       = urlParsed.query.iso;
-    if ( undefined === iso  ) {
-        response.writeHead( 400, "Bad request" );
-        response.end();
-        return;
-    }
-    const date = new Date( iso );
-    if ( isNaN(date.getTime()) ) {
+    const date      = new Date( iso );
+    if ( undefined === iso || isNaN(date.getTime()) ) {
         response.writeHead( 400, "Bad request" );
         response.end();
         return;
