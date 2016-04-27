@@ -1,27 +1,27 @@
-const http = require('http')
+const http = require('http');
 
-const page = process.argv[2]
+const page = process.argv[2];
 if ( undefined == page ) {
     // bail immediately
-    return
+    return;
 }
 
 // Collect responses manually
-var buffer = ""
+var buffer = "";
 
 function collect(data) {
-    buffer += data
+    buffer += data;
 }
 
 function dump() {
-    console.log( buffer.length )
-    console.log( buffer )
+    console.log( buffer.length );
+    console.log( buffer );
 }
 
 http.get( page, function(response) {
-    response.setEncoding('utf8')
-    response.on('data' , collect)
-    response.on('end'  , dump)
-    response.on('error', console.error)
-} )
+    response.setEncoding('utf8');
+    response.on('data' , collect);
+    response.on('end'  , dump);
+    response.on('error', console.error);
+} );
 

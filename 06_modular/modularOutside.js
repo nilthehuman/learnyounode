@@ -5,7 +5,7 @@ function print( error, list )
         console.log( "Error: " + error );
         return;
     }
-    list.forEach( function(x) { console.log(x) } );
+    list.forEach( function(x) { console.log(x); } );
 }
 
 function main()

@@ -17,5 +17,5 @@ function callback( error, data )
     console.log( lines );
 }
 
-main()
+main();
 

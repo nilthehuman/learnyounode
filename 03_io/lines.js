@@ -7,5 +7,5 @@ function main()
     console.log( lines );
 }
 
-main()
+main();
 
