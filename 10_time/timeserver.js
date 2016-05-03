@@ -12,5 +12,7 @@ if ( isNaN(port) ) {
 net.createServer( function(socket) {
     socket.write( strftime('%F %H:%M') + "\n" );
     socket.end();
-}).listen( port );
+} ).on( 'error', function(error) {
+    console.error( error.message );
+} ).listen( port );
 

@@ -17,5 +17,7 @@ http.createServer( function( _, response ) {
         console.error('Could not read ' + file + ', sorry');
         return;
     });
-}).listen( port );
+} ).on( 'error', function(error) {
+    console.error( error.message );
+} ).listen( port );
 

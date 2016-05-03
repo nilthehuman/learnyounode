@@ -23,5 +23,7 @@ http.get( page, function(response) {
     response.on('data' , collect);
     response.on('end'  , dump);
     response.on('error', console.error);
+} ).on( 'error', function(error) {
+    console.error( error.message );
 } );
 

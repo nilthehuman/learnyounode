@@ -38,5 +38,7 @@ http.createServer( function( request, response ) {
     response.writeHead( 200, { 'Content-Type': 'application/json' } );
     response.write( JSON.stringify(jsonTime) );
     response.end();
-}).listen( port );
+} ).on( 'error', function(error) {
+    console.error( error.message );
+} ).listen( port );
 

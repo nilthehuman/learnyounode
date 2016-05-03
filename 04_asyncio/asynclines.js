@@ -2,6 +2,8 @@ function main()
 {
     const fs = require( "fs" );
     const infilename = process.argv[2];
+    if ( undefined === infilename )
+        return;
     fs.readFile( infilename, callback );
 }
 

@@ -2,11 +2,17 @@ function main()
 {
     const fs = require( "fs" );
     const dirname = process.argv[2];
+    if ( undefined === dirname )
+        return;
     fs.readdir( dirname, callback );
 }
 
 function callback(error, files)
 {
+    if ( error ) {
+        console.error( error.message );
+        return;
+    }
     const extension = '.' + process.argv[3];
     const path = require( "path" );
     const filter = function p(x) { return extension == path.extname(x); };

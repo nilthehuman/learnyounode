@@ -15,5 +15,7 @@ http.createServer( function( request, response ) {
     request.pipe( map( function(chunk) {
         return chunk.toString().toUpperCase();
     })).pipe( response );
-}).listen( port );
+} ).on( 'error', function(error) {
+    console.error( error.message );
+} ).listen( port );
 

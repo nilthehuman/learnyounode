@@ -38,6 +38,9 @@ function callback(i) {
 }
 
 for (i = 0; i < pages.length; ++i) {
-    http.get( pages[i].url, callback(i) );  // JavaScript's scoping is broken
+    // JavaScript's scoping is broken
+    http.get( pages[i].url, callback(i) ).on( 'error', function(error) {
+        console.error( error.message );
+    } );
 }
 
