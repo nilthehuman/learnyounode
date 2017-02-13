@@ -11,5 +11,5 @@ someone. :)
 All contents of the present repository are released into the public domain.
 See [the license][2].
 
-[1]: github.com/workshopper/learnyounode
+[1]: https://github.com/workshopper/learnyounode
 [2]: UNLICENSE
